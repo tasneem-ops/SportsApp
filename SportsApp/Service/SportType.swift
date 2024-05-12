@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum SportType : String{
+    case football = "football"
+    case basketball = "basketball"
+    case cricket = "cricket"
+    case tennis = "tennis"
+}
