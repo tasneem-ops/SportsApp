@@ -17,11 +17,11 @@
 		85EB0B482BEF5A75000472CD /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 85EB0B472BEF5A75000472CD /* AlamofireDynamic */; };
 		85EB0B4B2BEF5B19000472CD /* SportsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B492BEF5B19000472CD /* SportsApp.xcdatamodeld */; };
 		85EB0B4E2BEF6422000472CD /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B4D2BEF6422000472CD /* LocalDataSource.swift */; };
-		85EB0B502BEF6505000472CD /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B4F2BEF6505000472CD /* League.swift */; };
 		85EB0B532BEF6A26000472CD /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B522BEF6A26000472CD /* RemoteDataSource.swift */; };
 		85EB0B552BEF6B86000472CD /* SportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B542BEF6B86000472CD /* SportType.swift */; };
 		85EB0B582BEF873D000472CD /* APIResultFootballLeagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B572BEF873D000472CD /* APIResultFootballLeagues.swift */; };
 		85EB0B5A2BEF876B000472CD /* FootballLeagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EB0B592BEF876B000472CD /* FootballLeagues.swift */; };
+		BEE6896D2BF0B4E6007BB0E7 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE6896C2BF0B4E6007BB0E7 /* League.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,11 @@
 		1EA386092BED14B60066127B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85EB0B4A2BEF5B19000472CD /* SportsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportsApp.xcdatamodel; sourceTree = "<group>"; };
 		85EB0B4D2BEF6422000472CD /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
-		85EB0B4F2BEF6505000472CD /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = League.swift; path = ../../../../League.swift; sourceTree = "<group>"; };
 		85EB0B522BEF6A26000472CD /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		85EB0B542BEF6B86000472CD /* SportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportType.swift; sourceTree = "<group>"; };
 		85EB0B572BEF873D000472CD /* APIResultFootballLeagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResultFootballLeagues.swift; sourceTree = "<group>"; };
 		85EB0B592BEF876B000472CD /* FootballLeagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballLeagues.swift; sourceTree = "<group>"; };
+		BEE6896C2BF0B4E6007BB0E7 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			children = (
 				85EB0B492BEF5B19000472CD /* SportsApp.xcdatamodeld */,
 				85EB0B4D2BEF6422000472CD /* LocalDataSource.swift */,
-				85EB0B4F2BEF6505000472CD /* League.swift */,
+				BEE6896C2BF0B4E6007BB0E7 /* League.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 				85EB0B552BEF6B86000472CD /* SportType.swift in Sources */,
 				85EB0B5A2BEF876B000472CD /* FootballLeagues.swift in Sources */,
 				85EB0B4B2BEF5B19000472CD /* SportsApp.xcdatamodeld in Sources */,
-				85EB0B502BEF6505000472CD /* League.swift in Sources */,
 				1EA385FE2BED14B40066127B /* SceneDelegate.swift in Sources */,
+				BEE6896D2BF0B4E6007BB0E7 /* League.swift in Sources */,
 				85EB0B582BEF873D000472CD /* APIResultFootballLeagues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

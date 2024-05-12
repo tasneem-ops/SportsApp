@@ -19,6 +19,10 @@ class ViewController: UIViewController {
             data in
             print(data?.count)
         })
+        LocalDataSource.localDataSource.getAllLeagues { leagues in
+            print(leagues.count)
+        }
+        LocalDataSource.localDataSource.deleteLeague(league: League(name: "Hala", key: 123, logoUrl: "gd"))
     }
 
 

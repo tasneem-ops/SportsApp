@@ -10,12 +10,15 @@ import CoreData
 
 protocol ILocalDataSource{
     func insert(league : League)
+    func deleteLeague(league:League)
+    func getAllLeagues(complitionHandler: @escaping ([League]) -> Void) 
 }
 
 class LocalDataSource : ILocalDataSource{
-    
+   
     var context : NSManagedObjectContext!
     static let localDataSource = LocalDataSource()
+    
     
     private init(){
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -37,4 +40,84 @@ class LocalDataSource : ILocalDataSource{
             print(error.localizedDescription)
         }
     }
+    
+    func deleteLeague(league: League) {
+        
+        guard let leagueEntity = NSEntityDescription.entity(forEntityName: "LeagueDTO", in: context)else{
+            return
+        }
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "LeagueDTO")
+            fetchRequest.predicate = NSPredicate(format: "key == %ld", league.key)
+        
+        do {
+                let leagues = try context.fetch(fetchRequest)
+
+                if let leagueDTO = leagues.first as? NSManagedObject {
+                    context.delete(leagueDTO)
+
+                    do {
+                        try context.save()
+                        print("League Deleted: \(league.name)")
+                    } catch {
+                        print("Error saving context after deleting league: \(error.localizedDescription)")
+                    }
+                } else {
+                    print("League not found for deletion.")
+                }
+            } catch {
+                print("Error fetching league for deletion: \(error.localizedDescription)")
+            }
+            
+//            let managedObject = NSManagedObject(entity: leagueEntity, insertInto: context)
+//            
+//            managedObject.setValue(league.name, forKey: "name")
+//            managedObject.setValue(league.key, forKey: "key")
+//            managedObject.setValue(league.logoUrl, forKey: "logoUrl")
+//        let leagues = try context.fetch(fetchRequest)
+//
+//                if let leagueDTO = leagues.first as? NSManagedObject {
+//                    context.delete(leagueDTO)
+//        print("delete \(league.name)")
+//        do {
+//           
+//            //context.delete(managedObject)
+//
+//            try context.save()
+//            
+//            print("League Deleted!")
+//        } catch {
+//            print("Error deleting league: \(error.localizedDescription)")
+//        }
+    }
+
+    
+
+    
+    func getAllLeagues(complitionHandler: @escaping ([League]) -> Void) {
+        var leagues: [League] = []
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LeagueDTO")
+       
+        do{
+            let leagueDTOs = try context.fetch(fetchRequest)
+                    
+                    for leagueDTO in leagueDTOs {
+                        let league = League(name: leagueDTO.value(forKey: "name") as! String,
+                                            key: leagueDTO.value(forKey: "key") as! Int16,
+                                            logoUrl: leagueDTO.value(forKey: "logoUrl") as! String)
+                        
+                        print(league.name)
+                        
+                        leagues.append(league)
+                    }
+            complitionHandler(leagues)
+            
+        }catch let error{
+            print("error \(error)")
+        }
+           
+        //return leagues
+    }
+    
+   
 }
