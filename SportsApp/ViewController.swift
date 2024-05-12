@@ -7,17 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         var remoteDataSource : RemoteDataSource<APIResultFootballLeagues>
         remoteDataSource = RemoteDataSource()
         // Do any additional setup after loading the view.
@@ -32,19 +25,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         LocalDataSource.localDataSource.deleteLeague(league: League(name: "Hala", key: 123, logoUrl: "gd"))
     }
 
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-           
-        // Configure the cell with data
-        //cell.name.text = "Walaa Shaaban" // Example
-        
-        return cell
-    }
 
 }
 

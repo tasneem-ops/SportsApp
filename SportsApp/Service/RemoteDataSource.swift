@@ -22,7 +22,7 @@ class RemoteDataSource<Result : Decodable>: IRemoteDataSource {
             response in
             if let data = response.data{
                 do{
-                    let json = try JSONDecoder().decode(Result.self, from: data)
+                    let json = try JSONDecoder().decode(Result.self, from: response.data!)
                     complitionHandler(json)
                 }catch let error{
                     print(error)
