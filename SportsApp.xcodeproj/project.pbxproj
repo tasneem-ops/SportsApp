@@ -171,9 +171,14 @@
 				1EA385FD2BED14B40066127B /* SceneDelegate.swift */,
 				1EA385FF2BED14B40066127B /* ViewController.swift */,
 				1EA386012BED14B40066127B /* Main.storyboard */,
+				BED2AFA22BF107AA00023830 /* CustomTableViewCell.swift */,
+				BED2AFA32BF107AA00023830 /* CustomTableViewCell.xib */,
+				BED2AF9A2BF0F55000023830 /* HomeCustomCell.swift */,
+				BED2AF9C2BF0F70900023830 /* HomeCollectionViewController.swift */,
 				1EA386042BED14B60066127B /* Assets.xcassets */,
 				1EA386062BED14B60066127B /* LaunchScreen.storyboard */,
 				1EA386092BED14B60066127B /* Info.plist */,
+				BED2AFA02BF1029300023830 /* HomeViewModel.swift */,
 			);
 			path = SportsApp;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				1E4BCAB22BF0E34700D5B34C /* SportLeagues.swift */,
 				1E4BCAB42BF0E37D00D5B34C /* APITeam.swift */,
 				1E4BCAB62BF0E3A800D5B34C /* APIResultTeams.swift */,
+				BED2AF9E2BF1025200023830 /* Sports.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			files = (
 				1EA386082BED14B60066127B /* LaunchScreen.storyboard in Resources */,
 				1EA386052BED14B60066127B /* Assets.xcassets in Resources */,
+				BED2AFA52BF107AA00023830 /* CustomTableViewCell.xib in Resources */,
 				1EA386032BED14B40066127B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,15 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED2AFA12BF1029300023830 /* HomeViewModel.swift in Sources */,
 				85EB0B4E2BEF6422000472CD /* LocalDataSource.swift in Sources */,
 				85EB0B532BEF6A26000472CD /* RemoteDataSource.swift in Sources */,
 				1E4BCAC02BF0EF0E00D5B34C /* AllLeaguesViewModel.swift in Sources */,
 				1EA386002BED14B40066127B /* ViewController.swift in Sources */,
+				BED2AF9B2BF0F55000023830 /* HomeCustomCell.swift in Sources */,
 				1E4BCAB52BF0E37D00D5B34C /* APITeam.swift in Sources */,
-				1E4BCAC82BF0FBD300D5B34C /* FavoriteLeaguesTableViewController.swift in Sources */,
-				1E4BCABE2BF0EDE900D5B34C /* AllLeaguesTableViewController.swift in Sources */,
 				1EA385FC2BED14B40066127B /* AppDelegate.swift in Sources */,
 				85EB0B552BEF6B86000472CD /* SportType.swift in Sources */,
+				BED2AF9D2BF0F70900023830 /* HomeCollectionViewController.swift in Sources */,
 				1E4BCAB32BF0E34700D5B34C /* SportLeagues.swift in Sources */,
 				1E4BCAAF2BF0E2F600D5B34C /* APIPlayer.swift in Sources */,
 				85EB0B4B2BEF5B19000472CD /* SportsApp.xcdatamodeld in Sources */,
