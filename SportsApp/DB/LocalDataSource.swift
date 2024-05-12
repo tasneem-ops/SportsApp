@@ -43,7 +43,7 @@ class LocalDataSource : ILocalDataSource{
     
     func deleteLeague(league: League) {
         
-        guard let leagueEntity = NSEntityDescription.entity(forEntityName: "LeagueDTO", in: context)else{
+        guard NSEntityDescription.entity(forEntityName: "LeagueDTO", in: context) != nil else {
             return
         }
         
@@ -68,27 +68,6 @@ class LocalDataSource : ILocalDataSource{
             } catch {
                 print("Error fetching league for deletion: \(error.localizedDescription)")
             }
-            
-//            let managedObject = NSManagedObject(entity: leagueEntity, insertInto: context)
-//            
-//            managedObject.setValue(league.name, forKey: "name")
-//            managedObject.setValue(league.key, forKey: "key")
-//            managedObject.setValue(league.logoUrl, forKey: "logoUrl")
-//        let leagues = try context.fetch(fetchRequest)
-//
-//                if let leagueDTO = leagues.first as? NSManagedObject {
-//                    context.delete(leagueDTO)
-//        print("delete \(league.name)")
-//        do {
-//           
-//            //context.delete(managedObject)
-//
-//            try context.save()
-//            
-//            print("League Deleted!")
-//        } catch {
-//            print("Error deleting league: \(error.localizedDescription)")
-//        }
     }
 
     

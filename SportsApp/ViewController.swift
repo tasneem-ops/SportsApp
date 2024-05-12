@@ -15,9 +15,9 @@ class ViewController: UIViewController {
         remoteDataSource = RemoteDataSource()
         // Do any additional setup after loading the view.
         LocalDataSource.localDataSource.insert(league: League(name: "Hala", key: 123, logoUrl: "gd"))
-        remoteDataSource.getAllLeagues(sportType: .football, complitionHandler: {
+        remoteDataSource.fetchData(url: "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=34e5babdbca7fd35bfc77f1203fcf99808885b0babef7cc966572dc08ae95c2b", complitionHandler: {
             data in
-            print(data?.count)
+           
         })
         LocalDataSource.localDataSource.getAllLeagues { leagues in
             print(leagues.count)
